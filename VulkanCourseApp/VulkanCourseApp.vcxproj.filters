@@ -29,8 +29,5 @@
     <ClInclude Include="Utlities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VulkanValidation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
