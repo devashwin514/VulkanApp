@@ -87,20 +87,6 @@ void VulkanRenderer::createInstance()
 		createInfo.enabledLayerCount = 0;
 	}
 
-	//// Create list to hold instance extensions
-	//std::vector<const char*> instanceExtensions = std::vector<const char*>();
-
-	//uint32_t glfwExtensionCount = 0;		// GLFW may require multiple extensions
-	//const char** glfwExtensions;			// Extensions passed as an array of cstrings, so need * of array to * of cstring
-
-	//// Get GLFW extensions
-	//glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
-
-	//// Add GLFW extensions to list of extensions
-	//for (size_t i = 0; i < glfwExtensionCount; i++) {
-	//	instanceExtensions.push_back(glfwExtensions[i]);
-	//}
-
 	// Check Instance Extensions supported
 	if (checkInstanceExtensionSupport(&extensions) == false) {
 		throw std::runtime_error("VkInstance does not support required extensions!");
