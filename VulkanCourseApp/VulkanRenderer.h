@@ -4,12 +4,19 @@
 
 #include <GLFW/glfw3.h>
 #include <stdexcept>
+#include <iostream>
 #include <vector>
 #include <array>
 #include <set>
 #include <algorithm>
+#include <cstring>
+#include <cstdlib>
 
+//#include "VulkanValidation.h"
 #include "Utlities.h"
+
+
+
 
 class VulkanRenderer
 {
@@ -50,12 +57,25 @@ private:
 	VkFormat swapChainImageFormat;
 	VkExtent2D swapChainExtent;
 
+	// - Debug
+	/*static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
+		VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+		VkDebugUtilsMessageTypeFlagsEXT messageType,
+		const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,
+		void* pUserData);*/
+
+	VkDebugUtilsMessengerEXT debugMessenger;
+
 	// - Pipeline
 	VkPipeline graphicsPipeline;
 	VkPipelineLayout pipelineLayout;
 	VkRenderPass renderPass;
 
 	// Vulkan Functions
+
+	// - Debug Functions
+	void setupDebugMessenger();
+	void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
 
 	// - Create Functions
 	void createInstance();
